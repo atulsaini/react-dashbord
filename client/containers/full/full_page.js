@@ -9,10 +9,14 @@ import Breadcrumb from '../../components/Breadcrumb/breadcrumb';
 import Aside from '../../components/Aside/aside';
 import Footer from '../../components/Footer/footer';
 import Dashboard from '../../views/Dashboard/dashboard';
+import Charts from '../../views/Charts/charts';
 
 
 // Components
 import Buttons from '../../views/Components/Buttons/buttons';
+import Cards from '../../views/Components/Card/card';
+import Tables from '../../views/Components/Tables/tables';
+
 
 class Full extends React.Component{
 
@@ -29,6 +33,9 @@ class Full extends React.Component{
               <Switch>
                 <Route path="/dashboard" name="Dashboard" component={Dashboard}/>
                 <Route path="/components/buttons" name="Buttons" component={Buttons}/>
+                <Route path="/components/cards" name="Cards" component={Cards}/>
+                <Route path="/components/tables" name="tables" component={Tables}/>
+                <Route path="/charts" name="Charts" component={Charts}/>
                 <Redirect from="/" to="/dashboard"/>
                 
               </Switch>

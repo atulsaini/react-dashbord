@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter, Route, Switch, browserHistory} from 'react-router-dom';
+import { HashRouter, Route, Switch, browserHistory} from 'react-router-dom';
 import './sass/style.scss'// import App from './components/App';
 // import { Router, browserHistory } from 'react-router';
 
@@ -13,8 +13,8 @@ import Full from './containers/full/full_page';
 //   , document.getElementById('app'));
 
 ReactDOM.render( 
-  <BrowserRouter>
+  <HashRouter history={browserHistory}>
     <Switch>
       <Route path="/" name="Home" component={Full} />
     </Switch>
-  </BrowserRouter> , document.getElementById('root'));
+  </HashRouter> , document.getElementById('root'));

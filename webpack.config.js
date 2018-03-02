@@ -1,19 +1,16 @@
-import path from 'path';
-import webpack from 'webpack';
+var path = require('path');
+var webpack =  require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+
+const BUILD_DIR = path.resolve(__dirname, '/dist');
 
 
 module.exports = {
-  entry: [
-    // 'webpack-hot-middleware/client',
-    path.join(__dirname, '/client/index.js' )
-  ],
-
+  entry: path.join(__dirname, '/client/index.js' ),
   output: {
     filename: 'bundle.js',
-    path: path.resolve(__dirname, 'dist')
+    path: path.join(__dirname, '/dist')
   },
-
   module: {
     rules: [
       {
@@ -50,10 +47,17 @@ module.exports = {
   },
 
   plugins: [
-    new webpack.NoEmitOnErrorsPlugin(),
     new webpack.optimize.OccurrenceOrderPlugin(),
     new webpack.HotModuleReplacementPlugin(),
     new ExtractTextPlugin('./css/style.css')
   ],
+
+  devServer: {
+    // contentBase: BUILD_DIR,
+    port: 9001,
+    compress: true,
+    hot: true,
+    open: true
+  },
   
 };

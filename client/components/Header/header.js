@@ -29,7 +29,7 @@ class Header extends React.Component{
           <i className="fa fa-bars" aria-hidden="true"></i>
         </button>
         <a href="#" className="navbar-brand navbar-toggler">Developer</a>
-        <button className="btn d-md-down-none mr-auto navbar-toggler" onClick={this.sidebarToggle}>
+        <button className="btn d-none d-sm-none d-md-block d-lg-block  mr-auto navbar-toggler" onClick={this.sidebarToggle}>
           <i className="fa fa-bars" aria-hidden="true"></i>
         </button>
         <button className="btn d-md-down-none navbar-toggler" onClick={this.asideToggle}>
